@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Docs - Schoolify</title> 
+    <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-screen">
+        <div class="login-box">
+            <h2>Schoolify Access</h2>
+            <p>Enter Student ID to continue</p>
+            <input type="password" id="passkey" placeholder="Enter ID...">
+            <button onclick="checkLogin()">Unlock</button>
+        </div>
+    </div>
+
+    <div id="app-content" style="display:none;">
+        <header id="main-header">
+            <h1>Schoolify Research Portal</h1>
+            <div class="nav-tabs">
+                <button onclick="showTab('library')">Library</button>
+                <button onclick="showTab('downloads')">Downloads</button>
+            </div>
+            <input type="text" id="searchBar" placeholder="Search Modules..." onkeyup="filterGames()">
+        </header>
+
+        <main class="game-grid" id="library">
+            <div class="card" onclick="openGame('https://now.gg/apps/roblox/9301/roblox.html')">
+                <img src="https://img.icons8.com/color/480/roblox.png">
+                <h3>Physics (RBX)</h3>
+            </div>
+            <div class="card" onclick="openGame('https://geometry-dash.io/')">
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/35/Geometry_Dash_Logo.PNG">
+                <h3>Geometry (GD)</h3>
+            </div>
+            <div class="card" onclick="openGame('https://mcraft.pages.dev/')">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png">
+                <h3>Architecture (MC)</h3>
+            </div>
+        </main>
+
+        <main class="game-grid" id="downloads" style="display:none;">
+            <div class="card download-card">
+                <h3>Offline Math Tool</h3>
+                <p>.EXE / .APK Available</p>
+                <a href="#" class="dl-btn">Download Module</a>
+            </div>
+            <div class="card download-card">
+                <h3>Asset Pack 1.0</h3>
+                <p>Textures & Models</p>
+                <a href="#" class="dl-btn">Download Module</a>
+            </div>
+        </main>
+    </div>
+
+    <div id="player-container" style="display:none;">
+        <div class="controls">
+            <button class="back-btn" onclick="closeGame()">Return to Docs</button>
+            <span>ESC = EMERGENCY EXIT</span>
+        </div>
+        <iframe id="game-iframe" src="" allowfullscreen></iframe>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
