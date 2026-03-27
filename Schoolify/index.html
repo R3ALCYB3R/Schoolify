@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Docs - Schoolify</title> 
+    <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <header id="main-header">
+        <h1>Schoolify Research Portal</h1>
+        <input type="text" id="searchBar" placeholder="Search Education Modules..." onkeyup="filterGames()">
+    </header>
+
+    <main class="game-grid" id="library">
+        <div class="card" onclick="openGame('https://now.gg/apps/roblox/9301/roblox.html')">
+            <img src="https://img.icons8.com/color/480/roblox.png">
+            <h3>Physics Module 1 (RBX)</h3>
+        </div>
+
+        <div class="card" onclick="openGame('https://geometry-dash.io/')">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/35/Geometry_Dash_Logo.PNG">
+            <h3>Geometry Module 2 (GD)</h3>
+        </div>
+
+        <div class="card" onclick="openGame('https://mcraft.pages.dev/')">
+            <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png">
+            <h3>Architecture Module 3 (MC)</h3>
+        </div>
+
+        <div class="card" onclick="openGame('https://www.xbox.com/play/games/fortnite/BT5P2X999VH2')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Fortnite_F_lettermark_logo.png">
+            <h3>Strategy Module 4 (FTN)</h3>
+        </div>
+
+        <div class="card" onclick="openGame('https://play.geforcenow.com/')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Valorant_logo_-_V_margin.svg">
+            <h3>Tactical Module 5 (VAL)</h3>
+        </div>
+
+        <div class="card" onclick="openGame('https://www.xbox.com/play')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Grand_Theft_Auto_V_logo.svg">
+            <h3>Urban Simulation 6 (GTA)</h3>
+        </div>
+    </main>
+
+    <div id="player-container" style="display:none;">
+        <div class="controls">
+            <button class="back-btn" onclick="closeGame()">Return to Docs</button>
+            <span id="panic-hint">ESC = PANIC BUTTON</span>
+        </div>
+        <iframe id="game-iframe" src="" allowfullscreen></iframe>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
