@@ -10,57 +10,59 @@
 <body>
 
     <div id="login-screen">
-        <div class="login-box">
-            <h2>Schoolify Access</h2>
-            <p>Enter Student ID to continue</p>
-            <input type="password" id="passkey" placeholder="Enter ID...">
-            <button onclick="checkLogin()">Unlock</button>
+        <div class="login-box" id="auth-box">
+            <h2>Schoolify Student Portal</h2>
+            <p>Enter Student ID to access modules</p>
+            <input type="password" id="passkey" placeholder="Student ID...">
+            <button onclick="checkLogin()">Login</button>
+        </div>
+
+        <div class="login-box" id="quiz-box" style="display:none;">
+            <h2>Security Verification: Math Quiz</h2>
+            <p>Solve to retry login: What is 15% of 200?</p>
+            <input type="text" id="quiz-answer" placeholder="Your answer...">
+            <button onclick="resetLogin()">Submit Answer</button>
         </div>
     </div>
 
     <div id="app-content" style="display:none;">
-        <header id="main-header">
-            <h1>Schoolify Research Portal</h1>
+        <header>
+            <h1>Schoolify Dashboard</h1>
             <div class="nav-tabs">
                 <button onclick="showTab('library')">Library</button>
                 <button onclick="showTab('downloads')">Downloads</button>
             </div>
-            <input type="text" id="searchBar" placeholder="Search Modules..." onkeyup="filterGames()">
         </header>
 
-        <main class="game-grid" id="library">
+        <main id="library" class="game-grid">
             <div class="card" onclick="openGame('https://now.gg/apps/roblox/9301/roblox.html')">
                 <img src="https://img.icons8.com/color/480/roblox.png">
-                <h3>Physics (RBX)</h3>
+                <h3>Physics Lab (RBX)</h3>
             </div>
             <div class="card" onclick="openGame('https://geometry-dash.io/')">
                 <img src="https://upload.wikimedia.org/wikipedia/en/3/35/Geometry_Dash_Logo.PNG">
-                <h3>Geometry (GD)</h3>
-            </div>
-            <div class="card" onclick="openGame('https://mcraft.pages.dev/')">
-                <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png">
-                <h3>Architecture (MC)</h3>
+                <h3>Logic Puzzle (GD)</h3>
             </div>
         </main>
 
-        <main class="game-grid" id="downloads" style="display:none;">
-            <div class="card download-card">
-                <h3>Offline Math Tool</h3>
-                <p>.EXE / .APK Available</p>
-                <a href="#" class="dl-btn">Download Module</a>
+        <main id="downloads" class="game-grid" style="display:none;">
+            <div class="card">
+                <h3>Schoolify Desktop</h3>
+                <p>Offline Version (.exe)</p>
+                <a href="#" class="dl-btn">Download</a>
             </div>
-            <div class="card download-card">
-                <h3>Asset Pack 1.0</h3>
-                <p>Textures & Models</p>
-                <a href="#" class="dl-btn">Download Module</a>
+            <div class="card">
+                <h3>Mobile Sync</h3>
+                <p>iOS/Android (.ipa/.apk)</p>
+                <a href="#" class="dl-btn">Download</a>
             </div>
         </main>
     </div>
 
     <div id="player-container" style="display:none;">
         <div class="controls">
-            <button class="back-btn" onclick="closeGame()">Return to Docs</button>
-            <span>ESC = EMERGENCY EXIT</span>
+            <button class="back-btn" onclick="closeGame()">← Back</button>
+            <span>Schoolify Secure Frame</span>
         </div>
         <iframe id="game-iframe" src="" allowfullscreen></iframe>
     </div>
