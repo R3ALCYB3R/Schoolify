@@ -11,25 +11,24 @@
 
     <div id="login-screen">
         <div class="login-box" id="auth-box">
-            <h2>Schoolify Student Portal</h2>
-            <p>Enter Student ID to access modules</p>
+            <h2>Schoolify Access</h2>
+            <p>Verification Required</p>
             <input type="password" id="passkey" placeholder="Student ID...">
             <button onclick="checkLogin()">Login</button>
         </div>
 
         <div class="login-box" id="quiz-box" style="display:none;">
-            <h2>Security Verification: Math Quiz</h2>
-            <p>Solve to retry login: What is 15% of 200?</p>
-            <input type="text" id="quiz-answer" placeholder="Your answer...">
-            <button onclick="resetLogin()">Submit Answer</button>
+            <h2>Security Check</h2>
+            <p>Solve: 12 + 48 ÷ 6?</p> <input type="text" id="quiz-answer" placeholder="Answer...">
+            <button onclick="resetLogin()">Verify</button>
         </div>
     </div>
 
     <div id="app-content" style="display:none;">
         <header>
-            <h1>Schoolify Dashboard</h1>
+            <h1>Schoolify</h1>
             <div class="nav-tabs">
-                <button onclick="showTab('library')">Library</button>
+                <button onclick="showTab('library')">Web Apps</button>
                 <button onclick="showTab('downloads')">Downloads</button>
             </div>
         </header>
@@ -37,32 +36,32 @@
         <main id="library" class="game-grid">
             <div class="card" onclick="openGame('https://now.gg/apps/roblox/9301/roblox.html')">
                 <img src="https://img.icons8.com/color/480/roblox.png">
-                <h3>Physics Lab (RBX)</h3>
+                <h3>Roblox (Cloud)</h3>
             </div>
             <div class="card" onclick="openGame('https://geometry-dash.io/')">
                 <img src="https://upload.wikimedia.org/wikipedia/en/3/35/Geometry_Dash_Logo.PNG">
-                <h3>Logic Puzzle (GD)</h3>
+                <h3>Geometry Dash</h3>
             </div>
         </main>
 
         <main id="downloads" class="game-grid" style="display:none;">
             <div class="card">
-                <h3>Schoolify Desktop</h3>
-                <p>Offline Version (.exe)</p>
-                <a href="#" class="dl-btn">Download</a>
+                <h3>LocalJIT</h3>
+                <p>Version 1.0 (.zip)</p>
+                <a href="downloads/LocalJIT.zip" class="dl-btn" download>Download</a>
             </div>
             <div class="card">
-                <h3>Mobile Sync</h3>
-                <p>iOS/Android (.ipa/.apk)</p>
-                <a href="#" class="dl-btn">Download</a>
+                <h3>DevStore</h3>
+                <p>iOS Utility (.ipa)</p>
+                <a href="downloads/DevStore.ipa" class="dl-btn" download>Download</a>
             </div>
         </main>
     </div>
 
     <div id="player-container" style="display:none;">
         <div class="controls">
-            <button class="back-btn" onclick="closeGame()">← Back</button>
-            <span>Schoolify Secure Frame</span>
+            <button class="back-btn" onclick="closeGame()">← Close</button>
+            <span>Schoolify Secure Stream</span>
         </div>
         <iframe id="game-iframe" src="" allowfullscreen></iframe>
     </div>
