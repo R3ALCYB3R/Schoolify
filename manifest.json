@@ -1,10 +1,10 @@
 {
-  "name": "Schoolify Resource Tool",
+  "name": "Schoolify",
   "short_name": "Schoolify",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#a020f0",
+  "theme_color": "#bc13fe",
   "icons": [
     {
       "src": "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico",
